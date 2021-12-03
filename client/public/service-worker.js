@@ -1,4 +1,7 @@
 /* global workbox */
+
+self.skipWaiting();
+
 if (workbox) {
   console.log(`Workbox is loaded`);
   workbox.setConfig({ debug: true });

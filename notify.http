@@ -1,0 +1,13 @@
+POST https://pwa-arbeitsblatt-4.herokuapp.com/notify
+Content-Type: application/json
+
+{
+    "message": "Das ist eine Nachricht."
+}
+### Local
+POST http://localhost:3000/notify
+Content-Type: application/json
+
+{
+    "message": "Das ist eine Nachricht."
+}
