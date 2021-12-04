@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.9e4843bc633853daa55e5ccb3c904ba1.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.c086e9cd7f675c2f390940a5dc4a6fe8.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 /* global workbox */
 
@@ -30,6 +30,14 @@ if (workbox) {
   //     cacheName: 'dominiks-icon-cache',
   //   }),
   // );
+
+  self.addEventListener('push', (event) => {
+    const data = event.data.json();
+    self.registration.showNotification(data.title, {
+      body: data.body.message,
+      icon: 'img/icons/employees_192x192.png',
+    });
+  });
 } else {
   console.log(`Workbox didn't load`);
 }

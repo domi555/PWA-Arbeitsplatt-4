@@ -28,6 +28,14 @@ if (workbox) {
   //     cacheName: 'dominiks-icon-cache',
   //   }),
   // );
+
+  self.addEventListener('push', (event) => {
+    const data = event.data.json();
+    self.registration.showNotification(data.title, {
+      body: data.body.message,
+      icon: 'img/icons/employees_192x192.png',
+    });
+  });
 } else {
   console.log(`Workbox didn't load`);
 }

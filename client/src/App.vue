@@ -53,14 +53,6 @@ export default {
 
     window.addEventListener('online', () => (this.offline = false));
     window.addEventListener('offline', () => (this.offline = true));
-
-    self.addEventListener('push', (event) => {
-      const data = event.data.json();
-      self.registration.showNotification(data.title, {
-        body: data.body.message,
-        icon: 'img/icons/employees_192x192.png',
-      });
-    });
   },
   methods: {
     async fetchData() {
