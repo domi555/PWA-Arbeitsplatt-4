@@ -17,7 +17,8 @@
     <!-- 2) Um wieviel ist das Laden das JavaScript Bundles chunk-vendors.a72f7e98.js schneller geworden? 13ms -> 4ms -> dreifache Geschwindigkeit -->
     <!-- 4) Wie lauten deine Pre-Cache Manifest Hashes von app vor und nach dem Hinzufügen der Überschrift? d10b6d263eabb3f26ad01228cf3aacf8 -> fae4721c317d025068faf0372656dfb0 -->
     <ButtonGet @get="fetchData"></ButtonGet>
-    <button class="btn mt-2" @click="subscribe">Subscribe</button>
+    <p class="mt-3 mb-1 text-center">Get the lastest news.</p>
+    <button class="btn btn-outline-success" @click="subscribe">Subscribe</button>
     <CardView
       :serverAddress="serverAddress"
       :employees="employees"
@@ -89,7 +90,7 @@ export default {
         applicationServerKey: this.urlBase64ToUint8Array(this.publicVapidKey),
       });
       await axios.post('/subscribe', subscription);
-      console.log('Subscription added.')
+      console.log('Subscription added.');
     },
     urlBase64ToUint8Array(base64String) {
       const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
