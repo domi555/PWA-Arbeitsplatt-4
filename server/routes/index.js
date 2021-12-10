@@ -31,7 +31,7 @@ router.post(
   }),
 );
 // Notify
-router.post('/notify', (req) => {
+router.post('/notify', (req, res) => {
   const payload = JSON.stringify({ title: 'Push Test', body: req.body });
   for (const sub of subscriptions) {
     try {
@@ -40,6 +40,7 @@ router.post('/notify', (req) => {
       console.error(error);
     }
   }
+  res.status(200).send('OK');
 });
 
 module.exports = router;

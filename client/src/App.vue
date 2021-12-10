@@ -23,6 +23,7 @@
       :serverAddress="serverAddress"
       :employees="employees"
       @del="delEmployee"
+      :offline="offline"
     ></CardView>
   </div>
 </template>
